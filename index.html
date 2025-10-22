@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports World</title>
+
+  <style>
+    /* ===== Reset & Fonts ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e3fff8, #d7f3ff, #f7fff7);
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ===== Header ===== */
+    header {
+      background: linear-gradient(to right, #00bfa5, #00a8e8);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      border-bottom: 4px solid rgba(255, 255, 255, 0.4);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: linear-gradient(to right, #ffffff, #dfffe7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      opacity: 0.95;
+    }
+
+    /* ===== Sports Section ===== */
+    .sports-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      padding: 50px 60px;
+    }
+
+    .sport-card {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border: 3px solid transparent;
+      background-clip: padding-box;
+    }
+
+    .sport-card::before {
+      content: "";
+      position: absolute;
+      top: -2px; left: -2px; right: -2px; bottom: -2px;
+      z-index: -1;
+      background: linear-gradient(45deg, #00bfa5, #00a8e8, #1de9b6, #00b8d4);
+      background-size: 300%;
+      border-radius: 20px;
+      animation: borderGlow 5s linear infinite;
+    }
+
+    @keyframes borderGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .sport-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .sport-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      filter: brightness(0.95);
+      transition: filter 0.3s ease;
+    }
+
+    .sport-card:hover img {
+      filter: brightness(1.1);
+    }
+
+    .sport-card h2 {
+      margin: 18px 0 8px;
+      font-size: 1.5rem;
+      color: #00796b;
+      letter-spacing: 1px;
+    }
+
+    .sport-card p {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.5;
+      padding: 0 20px 15px;
+    }
+
+    .sport-card a {
+      display: inline-block;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #00bfa5, #00a8e8);
+      color: white;
+      text-decoration: none;
+      padding: 10px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .sport-card a:hover {
+      background: linear-gradient(to right, #009e8c, #0089c4);
+      transform: scale(1.05);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: linear-gradient(to right, #00bfa5, #00a8e8);
+      color: white;
+      margin-top: auto;
+      border-top: 4px solid rgba(255, 255, 255, 0.4);
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
+
+    footer span {
+      font-weight: 600;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 5px;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #dfffe7;
+      text-decoration: underline;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      .sports-grid {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Sports World</h1>
+    <p>Your Gateway to Exciting Sports!</p>
+  </header>
+
+  <main>
+    <section class="sports-grid">
+      <div class="sport-card">
+        <img src="https://cdna.artstation.com/p/assets/images/images/021/405/456/large/sudip-samanta-bcci-logo4.jpg?1571574307" alt="Cricket">
+        <h2>Cricket</h2>
+        <p>Cricket is a bat-and-ball game played between two teams of 11 players. It’s the most loved sport in countries like India, England, and Australia, known for thrilling matches and world cups.</p>
+        <a href="https://adityasonawane2507.github.io/cricket-dash-board-1/" target="_blank">Explore</a>
+      </div>
+
+      <div class="sport-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Indian_Football_2020.svg/996px-Indian_Football_2020.svg.png" alt="Football">
+        <h2>Football</h2>
+        <p>Football, or soccer, is the world’s most popular sport. Played between two teams of 11 players, it’s known for speed, skill, and passion—especially during tournaments like the FIFA World Cup.</p>
+        <a href="https://bhamaresamiksha2007-byte.github.io/f1_players/" target="_blank">Explore</a>
+      </div>
+
+      <div class="sport-card">
+        <img src="https://img.freepik.com/premium-vector/f1-racing-car-icon-logo-transport-jet-sport-racing-car-symbol-concept-art-pit-crew-stop-isolated-vec_665349-934.jpg?w=360" alt="F1 Car">
+        <h2>F1 Racing</h2>
+        <p>Formula One (F1) is the highest class of international racing for open-wheel cars. It’s all about speed, technology, and skill as drivers race on circuits worldwide for the championship.</p>
+        <a href="https://en.wikipedia.org/wiki/Formula_One" target="_blank">Explore</a>
+      </div>
+
+      <div class="sport-card">
+        <img src="https://static.vecteezy.com/system/resources/previews/003/817/301/non_2x/ice-hockey-design-on-white-background-hockey-stick-line-art-logos-or-icons-illustration-vector.jpg" alt="Ice Hockey">
+        <h2>Ice Hockey</h2>
+        <p>Ice hockey is a fast-paced sport played on an ice rink. Players use sticks to hit a puck into the opponent’s goal, combining strength, agility, and teamwork to dominate the game.</p>
+        <a href="https://en.wikipedia.org/wiki/Ice_hockey" target="_blank">Explore</a>
+      </div>
+
+      <div class="sport-card">
+        <img src="https://img.freepik.com/free-vector/martial-arts-logo-illustration_98292-2411.jpg" alt="Martial Arts">
+        <h2>Martial Arts</h2>
+        <p>Martial arts are systems of combat practices like Karate, Judo, and Taekwondo. They emphasize discipline, physical fitness, and self-defense, blending mind and body strength.</p>
+        <a href="https://en.wikipedia.org/wiki/Martial_arts" target="_blank">Explore</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 <span>Sports World</span> | Made by <span>Aditya</span> | 
+    <a href="https://www.instagram.com/mr_adii_0707?igsh=aXV6Y2Y1MmIyZXQz" target="_blank">Instagram: @mr_adii_0707</a> 
+  
+  </footer>
+</body>
+</html>
